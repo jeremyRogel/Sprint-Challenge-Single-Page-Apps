@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: client side oruting is better for the user to use because since it isnt going to the server side (or back end) then its more responsive to the user and its quicker. 
 
 ## Project Set Up
 
