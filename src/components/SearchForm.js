@@ -1,10 +1,27 @@
 import React, { useState } from "react";
+import { Form, FormGroup, Label, Input } from "reactstrap";
 
-export default function SearchForm() {
- 
+export default function SearchForm({ onSearch }) {
+  const [search, setSearch] = useState({ name: "" });
+
+  const handleInputChange = event => {
+    setSearch({ ...search, name: event.target.value.substr(0, 20) });
+  };
+
   return (
-    <section className="search-form">
-     // Add a search form here
-    </section>
+    <Form onSubmit={event => onSearch(event, search)}>
+      <FormGroup className="SearchBar">
+        <Label for="exampleSearch">Character Search</Label>
+        <Input
+          className="search-bar"
+          type="search"
+          name="name"
+          id="exampleSearch"
+          placeholder="Search Characters By Name"
+          onChange={handleInputChange}
+          value={search.name}
+        />
+      </FormGroup>
+    </Form>
   );
 }
